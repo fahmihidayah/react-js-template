@@ -3,3 +3,8 @@ export interface BaseResponse<T> {
     message : string;
     data : T | null
 }
+
+export interface PaginateResponse<T> extends BaseResponse<T> {
+    page : number;
+    total : number;
+}

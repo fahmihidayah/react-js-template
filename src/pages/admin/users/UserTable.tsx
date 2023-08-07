@@ -3,7 +3,7 @@ import React from "react";
 import { UserItem } from "./UserItem";
 
 interface Props {
-    users: Array<UserData>
+    users: Array<UserData> | null
 }
 
 export const UserTable: React.FC<Props> = ({ users }) => {
@@ -20,7 +20,7 @@ export const UserTable: React.FC<Props> = ({ users }) => {
             </tr>
         </thead>
         <tbody>
-            {users.map(e => <UserItem user={e}></UserItem>)}
+            {users!!.map(e => <UserItem user={e}></UserItem>)}
         </tbody>
     </table>
 }
