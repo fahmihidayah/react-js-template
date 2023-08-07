@@ -17,7 +17,7 @@ export const useAdminListUser = () : [ViewState, PaginateResponse<Array<UserData
     const dispatch = useDispatch();
 
     const [search, setSearch] = useSearchParams();
-    const page = search.get('page')
+    const page = search.get('page') ?? "1"
 
     const [listUser, setListUser] = useState<PaginateResponse<Array<UserData>>>();
 
