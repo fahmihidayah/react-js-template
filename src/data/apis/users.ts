@@ -17,3 +17,16 @@ export const getUsers = async (page : string | null = "1") : Promise<BaseRespons
         return await handleError(error)
     }
 }
+
+export const getUserDetail = async (id : string | undefined) : Promise<BaseResponse<UserData>> => {
+    try {
+        const response = await api.get('users/' + id);
+
+        const jsonResponse = await response.data;
+
+        return jsonResponse as BaseResponse<UserData>
+    }
+    catch (error) {
+        return await handleError(error);
+    }
+} 
