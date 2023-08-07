@@ -13,6 +13,7 @@ export interface UserData {
     id: string;
     first_name : string;
     last_name : string;
+    is_email_verified : boolean;
     email : string;
     created_at : string;
     updated_at : string;

@@ -14,6 +14,7 @@ export const UserTable: React.FC<Props> = ({ users }) => {
                 <th>First Name</th>
                 <th>Last Name</th>
                 <th>Email </th>
+                <th>Email Verified</th>
                 <th>Created At</th>
                 <th>Updated At</th>
                 <th>Action</th>
