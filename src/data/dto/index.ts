@@ -8,3 +8,8 @@ export interface PaginateResponse<T> extends BaseResponse<T> {
     page : number;
     total : number;
 }
+
+export interface BaseQuery {
+    page : string;
+    keyword : string;
+}

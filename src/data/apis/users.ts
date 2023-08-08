@@ -1,12 +1,14 @@
+import { SearchQuery } from "@/hook/utils"
 import { api } from "."
 import { BaseResponse, PaginateResponse } from "../dto"
 import { User, UserData } from "../dto/user"
 import { handleError } from "./auth"
 
-export const getUsers = async (page : string | null = "1") : Promise<BaseResponse<Array<UserData>>> => {
+export const getUsers = async (searchQuery : SearchQuery, page : string) : Promise<BaseResponse<Array<UserData>>> => {
+    console.log(searchQuery)
     try {
         const response = await api.get("users", {
-            params : {page : page}
+            params : {... searchQuery, page : page}
         })
 
         const jsonResponse = await response.data

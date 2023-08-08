@@ -6,10 +6,15 @@ import { ViewState, uiActions } from "@/store/ui-slice";
 import { unwrapResult } from "@reduxjs/toolkit";
 import { postLogin } from "@/data/apis/auth";
 import { useNavigate } from "react-router-dom";
+import { BaseHook } from "@/hook";
 
 export type LoginAction = (form : LoginForm) => void 
 
-export const useLogin = (): [ViewState, LoginAction] => {
+export interface LoginHook extends BaseHook {
+    loginAction : LoginAction
+}
+
+export const useLogin = (): LoginHook => {
     const viewState = useAppSelector((state: RootState) => state.ui)
     const dispatch = useAppDispatch();
 
@@ -30,5 +35,5 @@ export const useLogin = (): [ViewState, LoginAction] => {
 
     }
 
-    return [viewState, loginAction];
+    return {viewState, loginAction};
 } 

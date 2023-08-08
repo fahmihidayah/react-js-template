@@ -6,10 +6,16 @@ import { useNavigate } from "react-router-dom";
 import { unwrapResult } from "@reduxjs/toolkit";
 import { useResetUi } from "@/hook/uihook";
 import { postSignUp } from "@/data/apis/auth";
+import { BaseHook } from "@/hook";
 
 export type SignUpAction = (signUpForm : SignUpForm) => void;
 
-export const useSignUp = () : [ViewState, SignUpAction] => {
+export interface SignUpHook extends BaseHook { 
+    signUpAction : SignUpAction
+
+}
+
+export const useSignUp = () : SignUpHook => {
 
     const viewState : ViewState = useAppSelector((state: RootState) => state.ui) 
 
@@ -31,5 +37,5 @@ export const useSignUp = () : [ViewState, SignUpAction] => {
         }
     }
 
-    return [viewState, signUpAction];
+    return {viewState, signUpAction};
 }

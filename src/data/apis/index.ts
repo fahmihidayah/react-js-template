@@ -8,6 +8,7 @@ function createAPI() : Axios {
     const headers : AxiosHeaders = new AxiosHeaders({
         "Content-Type" : "Application/Json"
     })
+    
     if(userWithToken) {
         headers.set("Authorization", `Bearer ${userWithToken.access_token}`)
     }

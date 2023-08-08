@@ -9,7 +9,7 @@ import { ActionFunction, Form, Link, LoaderFunction, useActionData, useNavigate,
 import { redirect } from "react-router-dom";
 import * as Yup from 'yup';
 import { isTokenAvailable } from "@/data/locals";
-import { useLogin } from "./hook";
+import { LoginHook, useLogin } from "./hook";
 import { TopMessage } from "@/components/message";
 
 const loginValidationSchema = Yup.object().shape({
@@ -19,7 +19,7 @@ const loginValidationSchema = Yup.object().shape({
 
 export const LoginPage: React.FC = () => {
 
-    const [viewState, loginAction] = useLogin()
+    const {viewState, loginAction} = useLogin()
 
     return <div className="container">
 

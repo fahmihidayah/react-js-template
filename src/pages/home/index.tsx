@@ -5,7 +5,7 @@ import { UiState } from "@/data/constants";
 import { TopMessage } from "@/components/message";
 
 export const HomePage : React.FC= () => {
-    const [viewState] = useHome();
+    const {viewState} = useHome();
     return <div className="container">
 
         <div className="row mt-4">
