@@ -4,19 +4,9 @@ import { getUserWithToken } from "../locals";
 import { User } from "../dto/user";
 
 function createAPI() : Axios {
-    const userWithToken : User | null = getUserWithToken()
-    const headers : AxiosHeaders = new AxiosHeaders({
-        "Content-Type" : "Application/Json"
-    })
-    
-    if(userWithToken) {
-        headers.set("Authorization", `Bearer ${userWithToken.access_token}`)
-    }
-    
     
     const api = axios.create({
         baseURL: BASE_API_URL,
-        headers: headers
     })
 
     api.interceptors.request.use(request => {
