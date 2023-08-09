@@ -1,9 +1,9 @@
 import axios, { Axios, AxiosHeaders } from "axios";
-import { BASE_API_URL } from "./utils";
+import { BASE_API_URL, getHeaders } from "./utils";
 import { getUserWithToken } from "../locals";
 import { User } from "../dto/user";
 
-function createAPI() : Axios {
+export function createAPI() : Axios {
     
     const api = axios.create({
         baseURL: BASE_API_URL,

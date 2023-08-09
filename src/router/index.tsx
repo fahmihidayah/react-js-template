@@ -1,3 +1,5 @@
+import { AdminListRoles } from "@/pages/admin/roles";
+import { AdminAddRole } from "@/pages/admin/roles/form";
 import { AdminUserDetail, adminUserDetailLoader } from "@/pages/admin/userDetail";
 import { AdminListUsers } from "@/pages/admin/users";
 import { IndexAdmin, indexAdminLoader } from "@/pages/base/admin";
@@ -23,6 +25,14 @@ const routes: RouteObject[] = [{
             path: "users/:id",
             element : <AdminUserDetail></AdminUserDetail>,
             loader : adminUserDetailLoader
+        },
+        {
+            path : "roles",
+            element : <AdminListRoles />
+        },
+        {
+            path: "roles/add",
+            element : <AdminAddRole></AdminAddRole>
         }
        
     ]

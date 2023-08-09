@@ -16,6 +16,10 @@ export const AdminSideMenu : React.FC = () => {
                     <div  className="sb-nav-link-icon"><i  className="fas fa-tachometer-alt"></i></div>
                     Users
                 </Link>
+                <Link className="nav-link" to="/admin/roles">
+                    <div  className="sb-nav-link-icon"><i  className="fas fa-tachometer-alt"></i></div>
+                    Roles
+                </Link>
                 
                 
                 
